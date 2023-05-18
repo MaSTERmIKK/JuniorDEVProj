@@ -1,0 +1,17 @@
+Scrivi in Node.js una funzione chiamata generaPassword che prende la lunghezza desiderata come parametro e restituisce una password casualecon la lunghezza specificata. 
+Chiedi all'utente di inserire la lunghezza desiderata e utilizza la funzione generaPassword per generare e stampare una password casuale.
+
+
+
+
+Soluzione:
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function generaPassword(lunghezza) {
+  const caratteri = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ
