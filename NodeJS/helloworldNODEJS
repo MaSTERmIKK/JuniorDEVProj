@@ -1,0 +1,24 @@
+Scrivi in Node.js un sistema definisce una funzione chiamata saluta che prende un nome come parametro e restituisce una stringa di saluto con il nome incluso. 
+Chiedi all'utente di inserire il proprio nome e utilizza la funzione saluta per stampare il saluto.
+
+
+
+
+Soluzione:
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function saluta(nome) {
+  return `Ciao, ${nome}! Benvenuto/a!`;
+}
+
+rl.question('Inserisci il tuo nome: ', (nome) => {
+  const saluto = saluta(nome);
+  console.log(saluto);
+  rl.close();
+});
