@@ -1,0 +1,51 @@
+Scrivi in Java un sistema che prende in input un numero intero compreso tra 1 e 7, che rappresenta un giorno stampa il corrispondente nome del giorno. 
+Utilizza l'istruzione "switch" per implementare la logica. Assumi che il numero inserito sia sempre valido.
+
+
+
+
+Soluzione:
+
+import java.util.Scanner;
+
+public class DayOfWeek {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Inserisci un numero da 1 a 7: ");
+        int day = input.nextInt();
+        
+        String dayName;
+        
+        switch (day) {
+            case 1:
+                dayName = "Lunedì";
+                break;
+            case 2:
+                dayName = "Martedì";
+                break;
+            case 3:
+                dayName = "Mercoledì";
+                break;
+            case 4:
+                dayName = "Giovedì";
+                break;
+            case 5:
+                dayName = "Venerdì";
+                break;
+            case 6:
+                dayName = "Sabato";
+                break;
+            case 7:
+                dayName = "Domenica";
+                break;
+            default:
+                dayName = "Giorno non valido";
+                break;
+        }
+        
+        System.out.println("Il giorno corrispondente è: " + dayName);
+        
+        input.close();
+    }
+}
