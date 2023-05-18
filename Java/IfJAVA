@@ -1,0 +1,29 @@
+Traccia dell'esercizio:
+Scrivi un programma Java che prende in input un numero intero e determina se il numero è positivo, negativo o zero. 
+Utilizza le istruzioni condizionali "if", "else if" e "else" per implementare la logica. 
+Stampa un messaggio appropriato a seconda del valore inserito.
+
+
+
+Soluzione:
+
+import java.util.Scanner;
+
+public class NumberCheck {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Inserisci un numero intero: ");
+        int number = input.nextInt();
+        
+        if (number > 0) {
+            System.out.println("Il numero è positivo.");
+        } else if (number < 0) {
+            System.out.println("Il numero è negativo.");
+        } else {
+            System.out.println("Il numero è zero.");
+        }
+        
+        input.close();
+    }
+}
