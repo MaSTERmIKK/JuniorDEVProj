@@ -1,0 +1,42 @@
+Crea un'applicazione Angular con un componente chiamato SalutoComponent. 
+Il componente SalutoComponent deve includere un input per l'inserimento del nome e un pulsante per eseguire il saluto. 
+Quando l'utente clicca sul pulsante, la funzione saluta deve essere chiamata per generare il saluto e visualizzarlo nell'interfaccia utente.
+
+
+
+
+Soluzione:
+
+Crea un nuovo progetto Angular utilizzando il comando ng new saluto-app.
+Crea un componente chiamato saluto utilizzando il comando ng generate component saluto.
+Modifica il file saluto.component.html del componente saluto con il seguente codice:
+
+
+<input [(ngModel)]="nome" placeholder="Inserisci il tuo nome">
+<button (click)="saluta()">Saluta</button>
+<p>{{ saluto }}</p>
+Modifica il file saluto.component.ts del componente saluto con il seguente codice:
+typescript
+Copy code
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-saluto',
+  templateUrl: './saluto.component.html',
+  styleUrls: ['./saluto.component.css']
+})
+export class SalutoComponent {
+  nome: string;
+  saluto: string;
+
+  saluta() {
+    this.saluto = `Ciao, ${this.nome}! Benvenuto/a!`;
+  }
+}
+
+
+--# Aggiungi il componente SalutoComponent al file app.component.html del componente principale con il seguente codice:
+
+<app-saluto></app-saluto>
+
+Avvia l'applicazione Angular utilizzando il comando ng serve --open.
