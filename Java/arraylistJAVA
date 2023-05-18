@@ -1,0 +1,23 @@
+Scrivi un programma Java che crea un ArrayList di stringhe, aggiunge alcune stringhe all'ArrayList e stampa il numero totale di stringhe presenti nell'ArrayList.
+
+
+
+
+Soluzione:
+
+import java.util.ArrayList;
+
+public class NumeroStringheArrayList {
+    public static void main(String[] args) {
+        ArrayList<String> stringhe = new ArrayList<>();
+        
+        stringhe.add("Ciao");
+        stringhe.add("Hello");
+        stringhe.add("Bonjour");
+        stringhe.add("Hola");
+        
+        int numeroStringhe = stringhe.size();
+        
+        System.out.println("Il numero di stringhe nell'ArrayList è: " + numeroStringhe);
+    }
+}
