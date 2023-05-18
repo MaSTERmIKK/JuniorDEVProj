@@ -1,0 +1,68 @@
+Scrivi un programma Java che rappresenta un oggetto "Studente". 
+L'oggetto Studente dovrebbe avere le seguenti proprietà: nome, cognome, età e voto. 
+Crea un oggetto Studente, assegna dei valori alle sue proprietà e stampa le informazioni dell'oggetto.
+
+
+
+
+
+Soluzione:
+
+public class Studente {
+    private String nome;
+    private String cognome;
+    private int eta;
+    private double voto;
+    
+    public Studente(String nome, String cognome, int eta, double voto) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.eta = eta;
+        this.voto = voto;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public String getCognome() {
+        return cognome;
+    }
+    
+    public int getEta() {
+        return eta;
+    }
+    
+    public double getVoto() {
+        return voto;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+    
+    public void setEta(int eta) {
+        this.eta = eta;
+    }
+    
+    public void setVoto(double voto) {
+        this.voto = voto;
+    }
+    
+    public void stampaInformazioni() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Cognome: " + cognome);
+        System.out.println("Età: " + eta);
+        System.out.println("Voto: " + voto);
+    }
+    
+    public static void main(String[] args) {
+        Studente studente = new Studente("Mario", "Rossi", 20, 9.5);
+        
+        studente.stampaInformazioni();
+    }
+}
