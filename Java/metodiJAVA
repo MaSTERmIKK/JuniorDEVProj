@@ -1,0 +1,29 @@
+Scrivi in Java un sistema che permetta di calcolare e restituisca l'area di un cerchio. 
+Crea un metodo chiamato calcolaAreaCerchio che accetta il raggio del cerchio come parametro e restituisce l'area del cerchio come valore di ritorno.
+Chiama il metodo nel metodo main e stampa il risultato.
+
+
+
+
+Soluzione:
+
+import java.util.Scanner;
+
+public class CalcolaAreaCerchio {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Inserisci il raggio del cerchio: ");
+        double raggio = input.nextDouble();
+        
+        double area = calcolaAreaCerchio(raggio);
+        
+        System.out.println("L'area del cerchio è: " + area);
+        
+        input.close();
+    }
+    
+    public static double calcolaAreaCerchio(double raggio) {
+        double area = Math.PI * Math.pow(raggio, 2);
+        return area;
+    }
