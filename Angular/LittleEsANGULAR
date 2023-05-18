@@ -1,0 +1,57 @@
+Domanda: Crea un componente Angular che visualizzi un nome e un'età in input. Il componente dovrebbe visualizzare 
+il nome e l'età all'interno di un paragrafo quando l'utente inserisce i valori nei campi di input.
+
+Soluzione:
+
+
+app.component.html:
+
+
+<input [(ngModel)]="name" placeholder="Inserisci il nome">
+<input [(ngModel)]="age" placeholder="Inserisci l'età">
+<p>Il nome è {{ name }} e l'età è {{ age }}</p>
+
+
+Domanda: Crea un elenco di numeri da 1 a 5 utilizzando la direttiva *ngFor in Angular.
+
+
+Soluzione:
+
+
+app.component.html:
+
+<ul>
+  <li *ngFor="let number of numbers">{{ number }}</li>
+</ul>
+app.component.ts:
+
+typescript
+Copy code
+export class AppComponent {
+  numbers: number[] = [1, 2, 3, 4, 5];
+}
+
+
+
+Domanda: Crea un pulsante che incrementa un contatore ogni volta che viene cliccato. Visualizza il valore del contatore in un elemento di testo separato.
+
+
+Soluzione:
+
+
+app.component.html:
+
+
+<button (click)="incrementCounter()">Clicca per incrementare</button>
+<p>Il contatore è {{ counter }}</p>
+app.component.ts:
+
+typescript
+Copy code
+export class AppComponent {
+  counter: number = 0;
+  
+  incrementCounter() {
+    this.counter++;
+  }
+}
