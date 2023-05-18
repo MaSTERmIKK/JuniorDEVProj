@@ -1,0 +1,63 @@
+Calcolatrice in Angular
+
+Crea un'applicazione Angular con un componente chiamato CalcolatriceComponent. 
+Il componente CalcolatriceComponent deve includere due input per l'inserimento dei numeri e una serie di pulsanti per eseguire diverse operazioni matematiche.
+Quando l'utente clicca su uno dei pulsanti, la funzione corrispondente deve essere chiamata per eseguire l'operazione e visualizzare il risultato nell'interfaccia utente.
+
+Soluzione:
+
+Crea un nuovo progetto Angular utilizzando il comando ng new calcolatrice-app.
+Crea un componente chiamato calcolatrice utilizzando il comando ng generate component calcolatrice.
+Modifica il file calcolatrice.component.html del componente calcolatrice con il seguente codice:
+
+
+<input [(ngModel)]="numero1" placeholder="Inserisci il primo numero">
+<input [(ngModel)]="numero2" placeholder="Inserisci il secondo numero">
+
+<button (click)="somma()">Somma</button>
+<button (click)="sottrazione()">Sottrazione</button>
+<button (click)="moltiplicazione()">Moltiplicazione</button>
+<button (click)="divisione()">Divisione</button>
+
+<p>Somma: {{ risultatoSomma }}</p>
+<p>Sottrazione: {{ risultatoSottrazione }}</p>
+<p>Moltiplicazione: {{ risultatoMoltiplicazione }}</p>
+<p>Divisione: {{ risultatoDivisione }}</p>
+
+
+Modifica il file calcolatrice.component.ts del componente calcolatrice con il seguente codice:
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-calcolatrice',
+  templateUrl: './calcolatrice.component.html',
+  styleUrls: ['./calcolatrice.component.css']
+})
+export class CalcolatriceComponent {
+  numero1: number;
+  numero2: number;
+  risultatoSomma: number;
+  risultatoSottrazione: number;
+  risultatoMoltiplicazione: number;
+  risultatoDivisione: number;
+
+  somma() {
+    this.risultatoSomma = this.numero1 + this.numero2;
+  }
+
+  sottrazione() {
+    this.risultatoSottrazione = this.numero1 - this.numero2;
+  }
+
+  moltiplicazione() {
+    this.risultatoMoltiplicazione = this.numero1 * this.numero2;
+  }
+
+  divisione() {
+    this.risultatoDivisione = this.numero1 / this.numero2;
+  }
+}
+
+
