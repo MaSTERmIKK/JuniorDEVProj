@@ -1,0 +1,51 @@
+Scrivi un programma in Node.js che definisce quattro funzioni: somma, sottrazione, moltiplicazione e divisione. 
+Ognuna di queste funzioni accetta due numeri come parametri e restituisce il risultato dell'operazione corrispondente.
+hiedi all'utente di inserire due numeri e utilizza le funzioni per eseguire diverse operazioni matematiche e stampare i risultati.
+
+
+
+
+
+Soluzione:
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function somma(a, b) {
+  return a + b;
+}
+
+function sottrazione(a, b) {
+  return a - b;
+}
+
+function moltiplicazione(a, b) {
+  return a * b;
+}
+
+function divisione(a, b) {
+  return a / b;
+}
+
+rl.question('Inserisci il primo numero: ', (numero1) => {
+  rl.question('Inserisci il secondo numero: ', (numero2) => {
+    const a = parseInt(numero1);
+    const b = parseInt(numero2);
+    
+    const risultatoSomma = somma(a, b);
+    const risultatoSottrazione = sottrazione(a, b);
+    const risultatoMoltiplicazione = moltiplicazione(a, b);
+    const risultatoDivisione = divisione(a, b);
+    
+    console.log(`Somma: ${risultatoSomma}`);
+    console.log(`Sottrazione: ${risultatoSottrazione}`);
+    console.log(`Moltiplicazione: ${risultatoMoltiplicazione}`);
+    console.log(`Divisione: ${risultatoDivisione}`);
+    
+    rl.close();
+  });
+});
