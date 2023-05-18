@@ -1,0 +1,31 @@
+Scrivi un programma Java che stampi diverse variabili utilizzando il metodo System.out.println(). 
+Dichiarare e inizializzare una variabile di ogni tipo di dato primitivo: int, double, boolean, char e String. 
+Successivamente, stampare il valore di ciascuna variabile.
+
+
+
+
+Soluzione:
+
+public class PrintVariables {
+    public static void main(String[] args) {
+        int number = 10;
+        double decimal = 3.14;
+        boolean flag = true;
+        char character = 'A';
+        String text = "Hello, world!";
+        
+        System.out.println("Valore della variabile 'number': " + number);
+        System.out.println("Valore della variabile 'decimal': " + decimal);
+        System.out.println("Valore della variabile 'flag': " + flag);
+        System.out.println("Valore della variabile 'character': " + character);
+        System.out.println("Valore della variabile 'text': " + text);
+    }
+}
+
+
+Valore della variabile 'number': 10
+Valore della variabile 'decimal': 3.14
+Valore della variabile 'flag': true
+Valore della variabile 'character': A
+Valore della variabile 'text': Hello, world!
