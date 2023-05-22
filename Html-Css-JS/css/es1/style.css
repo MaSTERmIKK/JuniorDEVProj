@@ -1,0 +1,39 @@
+/* Stile di base */
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+}
+
+section {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #777;
+}
