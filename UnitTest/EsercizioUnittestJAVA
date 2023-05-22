@@ -1,0 +1,52 @@
+Scrivi un metodo chiamato calcolaMedia che accetti un array di interi come parametro e restituisca la media dei valori presenti nell'array. 
+Implementa anche un unit test per verificare che il metodo calcoli correttamente la media.
+
+
+
+
+
+Ecco una possibile soluzione:
+
+
+public class MediaArray {
+    public static double calcolaMedia(int[] array) {
+        if (array.length == 0) {
+            throw new IllegalArgumentException("L'array non può essere vuoto.");
+        }
+        
+        int somma = 0;
+        for (int numero : array) {
+            somma += numero;
+        }
+        
+        return (double) somma / array.length;
+    }
+}
+
+
+----------------------------------------------------
+
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MediaArrayTest {
+    @Test
+    public void testCalcolaMedia() {
+        // Preparazione dei dati di test
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {10, 20, 30};
+        int[] array3 = {-1, 0, 1, -2, 2};
+        
+        // Esecuzione del metodo da testare
+        double media1 = MediaArray.calcolaMedia(array1);
+        double media2 = MediaArray.calcolaMedia(array2);
+        double media3 = MediaArray.calcolaMedia(array3);
+        
+        // Verifica del risultato
+        double delta = 0.0001; // Precisione del confronto tra numeri decimali
+        Assert.assertEquals(3.0, media1, delta);
+        Assert.assertEquals(20.0, media2, delta);
+        Assert.assertEquals(0.0, media3, delta);
+    }
+}
