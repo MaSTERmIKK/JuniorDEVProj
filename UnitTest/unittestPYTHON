@@ -1,0 +1,35 @@
+Scrivi una funzione chiamata calcola_media che accetti una lista di numeri interi come parametro e restituisca la media dei valori presenti nella lista. 
+Implementa anche un unit test per verificare che la funzione calcoli correttamente la media.
+
+
+Ecco una possibile soluzione:
+
+
+def calcola_media(lista):
+    if len(lista) == 0:
+        raise ValueError("La lista non può essere vuota.")
+        
+    somma = sum(lista)
+    media = somma / len(lista)
+    return media
+    
+    
+    
+import unittest
+
+class TestCalcolaMedia(unittest.TestCase):
+    def test_calcola_media(self):
+        # Preparazione dei dati di test
+        lista1 = [1, 2, 3, 4, 5]
+        lista2 = [10, 20, 30]
+        lista3 = [-1, 0, 1, -2, 2]
+        
+        # Esecuzione del metodo da testare
+        media1 = calcola_media(lista1)
+        media2 = calcola_media(lista2)
+        media3 = calcola_media(lista3)
+        
+        # Verifica del risultato
+        self.assertAlmostEqual(3.0, media1)
+        self.assertAlmostEqual(20.0, media2)
+        self.assertAlmostEqual(0.0, media3)
