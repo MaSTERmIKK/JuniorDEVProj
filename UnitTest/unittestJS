@@ -1,0 +1,37 @@
+Scrivi una funzione chiamata calcolaMedia che accetti un array di numeri interi come parametro e restituisca la media dei valori presenti nell'array. 
+Implementa anche un unit test per verificare che la funzione calcoli correttamente la media.
+
+
+
+Ecco una possibile soluzione:
+
+function calcolaMedia(array) {
+  if (array.length === 0) {
+    throw new Error("L'array non può essere vuoto.");
+  }
+
+  const somma = array.reduce((acc, numero) => acc + numero, 0);
+  const media = somma / array.length;
+  return media;
+}
+
+
+
+function testCalcolaMedia() {
+  // Preparazione dei dati di test
+  const array1 = [1, 2, 3, 4, 5];
+  const array2 = [10, 20, 30];
+  const array3 = [-1, 0, 1, -2, 2];
+
+  // Esecuzione del metodo da testare
+  const media1 = calcolaMedia(array1);
+  const media2 = calcolaMedia(array2);
+  const media3 = calcolaMedia(array3);
+
+  // Verifica del risultato
+  assert.equal(media1, 3);
+  assert.equal(media2, 20);
+  assert.equal(media3, 0);
+}
+
+testCalcolaMedia();
